@@ -1,0 +1,14 @@
+FONTS:
+Libre Baskerville
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
+	font-family: 'Libre Baskerville', serif;
+
+League Spartan Regular
+	@font-face {
+    font-family: 'League Spartan';
+    src: url('fonts/leaguespartan-bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+	}
+
+COLORS:
