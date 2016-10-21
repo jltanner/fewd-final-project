@@ -29,6 +29,8 @@ aside {
 	width: 30%;
 	min-height: 100vh;
 	background-color: #fff;
+	overflow: hidden;
+	float: left;
 }
 .masthead {
 	margin: 50px 0 0 50px;
@@ -58,7 +60,6 @@ aside {
 	padding: 0;
 }
 .masthead p {
-	font-size: 18px;
 	font-style: italic;
 	float: left;
 	clear: both;
@@ -88,4 +89,27 @@ nav li a {
 	text-decoration: none;
 	text-align: right;
 	display: block;
+}
+nav li a:hover {
+	color: #9B3E83;
+}
+.social {
+	float: right;
+	clear: both;
+	padding: 20px 0;
+}
+.social i {
+	color: #9B3E83;
+	font-size: 2em;
+	padding-left: 10px;
+}
+.social i:hover {
+	color: #bbb;
+}
+.splash {
+	width: 70%;
+	min-height: 100vh;
+	background-image: url("../images/home-bg.jpg");
+	background-size: cover;
+	float: right;
 }
