@@ -19,30 +19,52 @@ h1 {
 	font-family: 'League Spartan';
 	font-size: 40px;
 	color: #330D2B;
+	margin: 0 0 5px 0;
 }
 h2 {
 	font-family: 'League Spartan';
 	font-size: 18px;
-	color: #9B3E83; 
+	color: #9B3E83;
+	margin: 0;
 }
+h3 {
+	font-family: 'League Spartan';
+	font-size: 16px;
+	color: #330D2B;
+	margin: 0;
+}
+button {
+	font-family: 'League Spartan';
+	font-size: 14px;
+	color: #fff;
+	background-color: #9B3E83;
+	padding: 10px 12px;
+	border: 0;
+}
+
+/* SIDEBAR / NAV */
 aside {
 	width: 30%;
 	height: 100vh;
+	position: fixed;
 	background-color: #fff;
 	overflow: hidden;
 	float: left;
 }
 .masthead {
-	margin: 50px 0 0 50px;
+	padding: 50px;
+	width: 100%;
 	float: left;
+	overflow: hidden;
 }
 .masthead img {
 	display: block;
 	margin-bottom: 15px;
 }
-.masthead a {
+.masthead a.logo {
 	font-family: 'League Spartan';
 	font-size: 32px;
+	letter-spacing: 1.5px;
 	color: #9B3E83;
 	text-decoration: none;
 	margin-bottom: 15px;
@@ -66,11 +88,12 @@ aside {
 	margin-top: 25px;
 }
 nav {
-	clear: both;
 	width: 60%;
+	position: absolute;
+	bottom: 0;
 	border-top: 1px solid #ABABAB;
 	padding: 0;
-	margin-top: 25px;
+	margin-bottom: 25px;
 	float: left;
 }
 nav ul {
@@ -100,16 +123,112 @@ nav li a:hover {
 }
 .social i {
 	color: #9B3E83;
-	font-size: 2em;
+	font-size: 1.5em;
 	padding-left: 10px;
 }
 .social i:hover {
-	color: #bbb;
+	color: #C38BB5;
 }
-.splash {
+
+/* MAIN SECTION */
+section {
 	width: 70%;
 	height: 100vh;
+	float: right;
+	padding: 60px 50px 50px 50px;
+}
+.splash {
 	background-image: url("../images/home-bg.jpg");
 	background-size: cover;
+}
+
+/* PUBLICATION PAGES */
+.title {
+	width: 100%;
+	margin-bottom: 25px;
+}
+.single-pub-cover {
+	float: left;
+	width: 55%;
+	overflow: hidden;
+}
+.single-pub-cover img {
+	width: 100%;
+	box-shadow: 0px 10px 24px 0px rgba(102,102,102,0.5);
+}
+.single-pub-description {
 	float: right;
+	width: 45%;
+	padding-left: 25px;
+}
+.single-pub-description h2 {
+	margin-top: -10px;
+}
+.single-pub-description button {
+	margin-top: -10px;
+	margin-right: 10px;
+}
+
+/* PUBLICATIONS GRID */
+.pub {
+	float: left;
+	width: 44%;
+	background-color: #fff;
+	margin: 0 40px 30px 0;
+	overflow: hidden;
+}
+.pub img {
+	width: 100%;
+}
+.pub-text {
+	width: 100%;
+	padding: 15px;
+}
+.pub h3 {
+	font-size: 20px;
+}
+.pub p {
+	margin: 0;
+	font-style: italic;
+}
+.pub a {
+	text-decoration: none;
+}
+.pub a:hover {
+	opacity: .7;
+}
+/* TITLE COLORS */
+.pub-tc1 {
+	color: #9B3E83;
+}
+.pub-tc2 {
+	color: #309E9C;
+}
+.pub-tbw {
+	color: #56857B;
+}
+.pub-ssf {
+	color: #9B7415;
+}
+.pub-wwlg {
+	color: #ED4439;
+}
+.pub-tr {
+	color: #807D52;
+}
+
+/* SUBSCRIBE */
+.subscribe {
+	background-image: url("../images/subscribe-bg.jpg");
+	background-size: cover;
+}
+.form-wrap {
+
+}
+form {
+	background-color: rgba(255,255,255,.85);
+	text-align: center;
+	padding: 50px 0;
+	width: 65%;
+	margin: 0 auto;
 }
