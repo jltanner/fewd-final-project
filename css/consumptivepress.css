@@ -10,6 +10,9 @@
 body {
 	background-color: #E6E7E8;
 }
+a {
+	text-decoration: none;
+}
 p {
 	font-family: 'Libre Baskerville', serif;
 	font-size: 16px;
@@ -33,14 +36,25 @@ h3 {
 	color: #330D2B;
 	margin: 0;
 }
-button {
+h4 {
+	font-family: 'League Spartan';
+	font-size: 18px;
+	color: #330D2B;
+	margin: 0;
+}
+.btn {
 	font-family: 'League Spartan';
 	font-size: 14px;
+	letter-spacing: 1.1px;
 	color: #fff;
 	background-color: #9B3E83;
 	padding: 10px 12px;
+	display: inline-block;
 	border: 0;
 }
+.btn:hover {
+	background-color: #C38BB5;
+} 
 
 /* SIDEBAR / NAV */
 aside {
@@ -66,7 +80,6 @@ aside {
 	font-size: 32px;
 	letter-spacing: 1.5px;
 	color: #9B3E83;
-	text-decoration: none;
 	margin-bottom: 15px;
 	text-align: left;
 	float: left;
@@ -109,7 +122,6 @@ nav li a {
 	font-family: 'League Spartan';
 	font-size: 20px;
 	color: #330D2B;
-	text-decoration: none;
 	text-align: right;
 	display: block;
 }
@@ -119,7 +131,7 @@ nav li a:hover {
 .social {
 	float: right;
 	clear: both;
-	padding: 20px 0;
+	padding-top: 20px;
 }
 .social i {
 	color: #9B3E83;
@@ -135,7 +147,6 @@ section {
 	width: 70%;
 	height: 100vh;
 	float: right;
-	padding: 60px 50px 50px 50px;
 }
 .splash {
 	background-image: url("../images/home-bg.jpg");
@@ -143,9 +154,20 @@ section {
 }
 
 /* PUBLICATION PAGES */
+.container {
+	width: 88%;
+	margin: 60px auto;
+	margin-bottom: 25px;
+}
+.container:after{
+    clear: both;
+    content: "";
+    display: block;
+}
 .title {
 	width: 100%;
 	margin-bottom: 25px;
+	padding: 0;
 }
 .single-pub-cover {
 	float: left;
@@ -154,28 +176,43 @@ section {
 }
 .single-pub-cover img {
 	width: 100%;
-	box-shadow: 0px 10px 24px 0px rgba(102,102,102,0.5);
 }
 .single-pub-description {
-	float: right;
+	float: left;
 	width: 45%;
-	padding-left: 25px;
+	padding-left: 50px;
 }
 .single-pub-description h2 {
 	margin-top: -10px;
 }
-.single-pub-description button {
-	margin-top: -10px;
-	margin-right: 10px;
+.single-pub-description h2 a {
+	color: #9B3E83;
+}
+.single-pub-description h2 a:hover {
+	opacity: .7;
+}
+.single-pub-description h3 {
+	margin-bottom: -5px;
+	padding-top: 10px;
+	border-bottom: 1px solid #BBBBBB
+}
+.single-pub-description .btn {
+	margin: -5px 10px 0 0;
 }
 
 /* PUBLICATIONS GRID */
 .pub {
 	float: left;
-	width: 44%;
+	width: 47%;
 	background-color: #fff;
-	margin: 0 40px 30px 0;
+	margin-bottom: 30px;
 	overflow: hidden;
+}
+.pub-left {
+	margin-right: 20px;
+}
+.pub-right {
+	margin-left: 20px;
 }
 .pub img {
 	width: 100%;
@@ -190,9 +227,6 @@ section {
 .pub p {
 	margin: 0;
 	font-style: italic;
-}
-.pub a {
-	text-decoration: none;
 }
 .pub a:hover {
 	opacity: .7;
@@ -229,9 +263,64 @@ section {
 	width: 100%;
 }
 form {
-	background-color: rgba(255,255,255,.85);
-	text-align: center;
-	padding: 60px 75px;
-	width: 60%;
+	background-color: rgba(255,255,255,.9);
+	text-align: left;
+	padding: 60px 60px 40px 60px;
+	width: 65%;
 	margin: 0 auto;
+}
+form h3 {
+	font-size: 28px;
+	letter-spacing: 1.5px;
+}
+input {
+	padding: 10px;
+}
+a.tinyletter {
+	font-size: 14px;
+	font-style: italic;
+	color: #9B3E83;
+}
+a.tinyletter:hover	 {
+	color: #C38BB5;
+}
+/* ABOUT */
+.def {
+	font-family: 'Libre Baskerville', serif;
+	font-size: 16px;
+	color: #330D2B;
+	margin-top: 10px;
+}
+.about-text-left {
+	width: 50%;
+	float: left;
+	padding-right: 20px;
+}
+.about-text-right {
+	width: 50%;
+	float: right;
+	padding-left: 20px;
+}
+.about-bottom {
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	float: right;
+	background-image: url(../images/about.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+ul.links {
+	padding: 0;
+}
+.links li {
+	display: inline-block;
+	float: left;
+	text-align: left;
+	padding: 0 50px 5px 0;
+}
+.copyright {
+	font-size: 14px;
+	font-style: italic;
 }
