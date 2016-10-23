@@ -311,7 +311,10 @@ a.tinyletter:hover	 {
 	font-family: 'Libre Baskerville', serif;
 	font-size: 16px;
 	color: #330D2B;
-	margin-top: 10px;
+	margin: 10px 0 20PX 0;
+}
+.def li {
+	padding-bottom: 10px;
 }
 .about-text-left {
 	width: 50%;
@@ -333,16 +336,46 @@ a.tinyletter:hover	 {
 	background-repeat: no-repeat;
 	background-position: left center;
 }
-ul.links {
-	padding: 0;
-}
-.links li {
-	display: inline-block;
+.links {
+	width: 50%;
 	float: left;
 	text-align: left;
-	padding: 0 50px 5px 0;
+}
+.links a {
+	font-family: 'League Spartan', sans-serif;
+	font-size: 14px;
+	color: #9B3E83;
+	display: block;
+	padding: 5px 10px 0 0;
 }
 .copyright {
 	font-size: 14px;
 	font-style: italic;
+	color: #9B3E83;
+}
+/* WEBCOMICS */
+.webcomics-splash1 {
+	width: 100%;
+	height: 50vh;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	background-image: url(../images/aob.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #1892FF;
+}
+.webcomics-splash2 {
+	width: 100%;
+	height: 50vh;
+	background-color: #FAEBD7;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.webcomics-splash-title {
+	font-size: 32px;
+	color: #fff;
+	text-align: center;
 }
