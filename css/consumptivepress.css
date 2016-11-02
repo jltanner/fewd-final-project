@@ -356,23 +356,39 @@ a.tinyletter:hover	 {
 /* WEBCOMICS */
 .webcomics-splash1 {
 	width: 100%;
-	height: 50vh;
+	height: 33.33vh;
 	display: flex;
     justify-content: center;
     align-items: center;
 	background-image: url(../images/aob.jpg);
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-position: center;
-	background-color: #1892FF;
+	background-position: 98% 25px;
+	background-color: #4198FF;
 }
 .webcomics-splash2 {
 	width: 100%;
-	height: 50vh;
-	background-color: #FAEBD7;
+	height: 33.33vh;
 	display: flex;
     justify-content: center;
     align-items: center;
+	background-image: url(../images/twc.jpg);
+	background-size: 55%;
+	background-repeat: no-repeat;
+	background-position: -50px center;
+	background-color: #F5F1E4;
+}
+.webcomics-splash3 {
+	width: 100%;
+	height: 33.33vh;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	background-image: url(../images/iotb.jpg);
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: 120% 25px;
+	background-color: #CDD6B9;
 }
 .webcomics-splash-title {
 	font-size: 32px;
