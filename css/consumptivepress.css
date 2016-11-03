@@ -158,7 +158,7 @@ nav li a:hover {
 	aside {
 		width: 100%;
 		height: auto;
-		overflow: hidden;
+		position: relative;
 	}
 	.masthead {
 		padding: 25px;
@@ -210,18 +210,20 @@ nav li a:hover {
 /* MAIN SECTION */
 section {
 	width: 70%;
-	height: 100vh;
 	float: right;
+	overflow: hidden;
 }
 .splash {
 	background-image: url("../images/home-bg.jpg");
 	background-size: cover;
+	height: 100vh;
 }
 
 /* Main Mobile Styles */
 @media only screen and (max-width: 768px) {
 	section {
 		width: 100%;
+		float: none;
 	}
 }
 
@@ -352,6 +354,7 @@ h4.subtitle {
 	display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 .form-wrap {
 	width: 100%;
@@ -403,6 +406,10 @@ a.tinyletter:hover	 {
 	height: 50%;
 	overflow: hidden;
 	float: right;
+}
+.about-img {
+	width: 100%;
+	height: 400px;
 	background-image: url(../images/about.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -466,4 +473,54 @@ a.tinyletter:hover	 {
 	font-size: 32px;
 	color: #fff;
 	text-align: center;
+}
+/* LIGHTBOX */
+#lightbox {
+    position: fixed;
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    background-color: #000; 
+    text-align:center;
+    z-index: 100;
+}
+#lightbox i {
+    color: #9B3E83;
+    font-size: 2.5em;
+    cursor: pointer; 
+}
+#lightbox i.close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px 15px 0 0;
+}
+#lightbox i.prev {
+	float: left;
+	padding-right: 15px;
+}
+#lightbox i.next {
+	float: right;
+	padding-left: 15px;
+}
+#lightbox #content {
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#lightbox #lgImg {
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+#lightbox img {
+	height: 100%;
+	width: auto;
+	cursor: pointer;
+}
+.hidden {
+	display: none;
 }
