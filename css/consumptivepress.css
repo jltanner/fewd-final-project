@@ -80,17 +80,14 @@ aside {
 	font-size: 32px;
 	letter-spacing: 1.5px;
 	color: #9B3E83;
+	display: block;
 	margin-bottom: 15px;
 	text-align: left;
-	float: left;
-	clear: both;
+	width: 200px;
 }
 .masthead hr {
 	width: 100px;
 	color: #ABABAB;
-	display: block;
-	float: left;
-	clear: both;
 	margin: 0;
 	padding: 0;
 }
@@ -141,6 +138,74 @@ nav li a:hover {
 .social i:hover {
 	color: #C38BB5;
 }
+.hamburger {
+	position: absolute;
+	top:30px;
+	right:15px;
+	z-index: 90;
+	display: none;
+}
+.hamburger span {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background-color: #9B3E83;
+	margin: 5px 0;
+}
+
+/* Nav Mobile Styles */
+@media only screen and (max-width: 768px) {
+	aside {
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+	}
+	.masthead {
+		padding: 25px;
+	}
+	.masthead a.logo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+	.masthead hr {
+		display: none;
+	}
+	.masthead p {
+		margin: 0;
+	}
+	nav {
+		width: 100%;
+		display: none;
+		float: none;
+		position: fixed;
+		top: 0;
+		background-color: #330D2B;
+		padding-top: 50px;
+		margin: 0;
+	}
+	nav ul li {
+		border-bottom: 1px solid #9B3E83;
+		padding: 20px 0 15px 15px;
+	}
+	nav li a {
+		color: #fff;
+		text-align: left;
+		display: block;
+	}
+	nav li a:hover {
+		color: #9B3E83;
+	}
+	.social {
+		float: left;
+	}
+	.social i {
+		font-size: 2em;
+		padding-left: 15px;
+	}
+	.hamburger {
+		display: block;
+	}
+}
 
 /* MAIN SECTION */
 section {
@@ -151,6 +216,13 @@ section {
 .splash {
 	background-image: url("../images/home-bg.jpg");
 	background-size: cover;
+}
+
+/* Main Mobile Styles */
+@media only screen and (max-width: 768px) {
+	section {
+		width: 100%;
+	}
 }
 
 /* PUBLICATION PAGES */
