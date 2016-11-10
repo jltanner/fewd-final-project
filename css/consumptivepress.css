@@ -42,13 +42,19 @@ h4 {
 	color: #330D2B;
 	margin: 0;
 }
+h5 {
+	font-family: 'League Spartan';
+	letter-spacing: 3px;
+	font-size: 90px;
+	color: #fff;
+}
 .btn {
 	font-family: 'League Spartan';
-	font-size: 14px;
+	font-size: 15px;
 	letter-spacing: 1.1px;
 	color: #fff;
 	background-color: #9B3E83;
-	padding: 10px 12px;
+	padding: 13px 13px 9px 13px;
 	display: inline-block;
 	border: 0;
 }
@@ -142,7 +148,7 @@ nav li a:hover {
 	position: absolute;
 	top:30px;
 	right:15px;
-	z-index: 90;
+	z-index: 100;
 	display: none;
 }
 .hamburger span {
@@ -206,6 +212,18 @@ nav li a:hover {
 		display: block;
 	}
 }
+/* NAV TABLET */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+	aside {
+		width: 35%;
+	}
+	.masthead {
+		padding: 25px;
+	}
+	.masthead a.logo {
+		font-size: 30px;
+	}
+}
 
 /* MAIN SECTION */
 section {
@@ -218,20 +236,53 @@ section {
 	background-size: cover;
 	height: 100vh;
 }
-
+#consume-box {
+	text-align: center;
+	height: 100%;
+	margin: 0 auto;
+	display: table;
+}
+.consume {
+	display: table-cell;
+	vertical-align: middle;
+	opacity: .7;
+}
+.consume h5 {
+	padding: 35px 35px 20px 35px;
+}
 /* Main Mobile Styles */
 @media only screen and (max-width: 768px) {
 	section {
 		width: 100%;
 		float: none;
 	}
+	.splash {
+		height: 75vh;
+	}
+}
+@media only screen and (max-width: 568px) {
+	.consume h5 {
+		font-size: 75px;
+	}
+}
+@media only screen and (max-width: 375px) {
+	.consume h5 {
+		font-size: 50px;
+		padding: 25px;
+	}
+}
+/* Main Tablet */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+	section {
+		width: 65%;
+	}
 }
 
 /* PUBLICATION PAGES */
 .container {
-	width: 88%;
-	margin: 60px auto;
-	margin-bottom: 25px;
+	width: 100%;
+	margin: 60px 0 25px 0;
+	padding: 0 40px;
 }
 .container:after{
     clear: both;
@@ -264,8 +315,6 @@ section {
 	width: 45%;
 	padding-left: 50px;
 }
-.single-pub-description h2 {
-}
 .single-pub-description h2 a {
 	color: #9B3E83;
 }
@@ -278,37 +327,70 @@ section {
 	border-bottom: 1px solid #BBBBBB;
 }
 .single-pub-description .btn {
-	margin: -5px 10px 0 0;
+	margin: -5px 10px 15px 0;
 }
-h3.back {
+h3.back, h3.next {
 	border: none;
-	margin: 20px 25px 0 0;
+	margin: 10px 25px 0 0;
 	float: left;
 }
-.back a {
+.back a, .next a {
 	color: #330D2B;
 }
-.back a:hover {
+.back a:hover, .next a:hover {
 	color: #9B3E83;
 }
 h4.subtitle {
 	margin: -5px 0 10px 0;
 	font-style: italic;
 }
+/* SINGLE PUB Mobile & Tablet */
+@media only screen and (max-width: 1024px) {
+	.single-pub-cover, .single-pub-description {
+		width: 100%;
+		float: none;
+	}
+	.single-pub-description {
+		padding: 0;
+	}
+	.single-pub-description h2 {
+		font-size: 24px;
+		margin-top: 15px;
+	}
+	.single-pub-description .btn {
+		margin: 0 15px 15px 0;
+		font-size: 18px;
+		float: none;
+		padding: 20px 15px 15px 15px;
+	}
+	.single-pub-description h3 {
+		font-size: 22px;
+	}
+	h3.back, h3.next {
+		margin: 5px 0 25px 0;
+		font-size: 18px;
+	}
+	h3.next {
+		float: right;
+	}
+}
 
 /* PUBLICATIONS GRID */
 .pub {
 	float: left;
-	width: 47%;
-	background-color: #fff;
+	width: 50%;
 	margin-bottom: 30px;
 	overflow: hidden;
 }
+.pub-inner-wrap {
+	width: 100%;
+	background-color: #fff;
+}
 .pub-left {
-	margin-right: 20px;
+	padding-right: 15px;
 }
 .pub-right {
-	margin-left: 20px;
+	padding-left: 15px;
 }
 .pub img {
 	width: 100%;
@@ -347,6 +429,21 @@ h4.subtitle {
 	color: #807D52;
 }
 
+/* PUBLICATIONS Mobile */
+@media only screen and (max-width: 768px) {
+	.title {
+		margin-bottom: 10px;
+	}
+	.pub {
+		width: 100%;
+		float: none;
+		margin: 0;
+	}
+	.pub-left, .pub-right {
+		margin-bottom: 35px;
+	}
+}
+
 /* SUBSCRIBE */
 .subscribe {
 	background-image: url("../images/subscribe-bg.jpg");
@@ -381,6 +478,26 @@ a.tinyletter {
 a.tinyletter:hover	 {
 	color: #C38BB5;
 }
+
+/* Subscribe Mobile Styles */
+@media only screen and (max-width: 768px) {
+	.subscribe {
+		height: 75vh;
+	}
+	form {
+		width: 80%;
+		margin: 40px auto;
+	}
+}
+@media only screen and (max-width: 375px) {
+	form {
+		padding: 40px 40px 25px 40px;
+	}
+	form h3 {
+		font-size: 20px;
+	}
+}
+
 /* ABOUT */
 .def {
 	font-family: 'Libre Baskerville', serif;
@@ -415,6 +532,10 @@ a.tinyletter:hover	 {
 	background-repeat: no-repeat;
 	background-position: left center;
 }
+.about-img h5 {
+	padding: 100px auto;
+	margin: 0;
+}
 .links {
 	width: 50%;
 	float: left;
@@ -432,47 +553,78 @@ a.tinyletter:hover	 {
 	font-style: italic;
 	color: #9B3E83;
 }
+
+/* ABOUT Mobile & Tablet */
+@media only screen and (max-width: 1024px) {
+	.container {
+		width: 100%;
+		margin: 0;
+		padding: 25px 40px 0 40px;
+	}
+	.about-text-left, .about-text-right {
+		width: 100%;
+		float: none;
+		padding: 0 0 15px 0;
+	}
+	h1 {
+		font-size: 36px;
+		padding: 0;
+		margin: 0;
+	}
+	.def {
+		margin-bottom: 10px;
+	}
+	.links {
+		width: 100%;
+		float: none;
+		margin-bottom: 20px;
+	}
+	.links a {
+		display: inline-block;
+		font-size: 16px;
+		padding: 10px 20px 0 0;
+	}
+}
+
 /* WEBCOMICS */
 .webcomics-splash1 {
 	width: 100%;
-	height: 33.33vh;
+	height: 50vh;
 	display: flex;
     justify-content: center;
     align-items: center;
-	background-image: url(../images/aob.jpg);
-	background-size: contain;
+	background-image: url(../images/aob-bg.jpg);
+	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 98% 25px;
+	background-position: center;
 	background-color: #4198FF;
 }
 .webcomics-splash2 {
 	width: 100%;
-	height: 33.33vh;
+	height: 50vh;
 	display: flex;
     justify-content: center;
     align-items: center;
 	background-image: url(../images/twc.jpg);
-	background-size: 55%;
+	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: -50px center;
+	background-position: center;
 	background-color: #F5F1E4;
-}
-.webcomics-splash3 {
-	width: 100%;
-	height: 33.33vh;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-	background-image: url(../images/iotb.jpg);
-	background-size: 50%;
-	background-repeat: no-repeat;
-	background-position: 120% 25px;
-	background-color: #CDD6B9;
 }
 .webcomics-splash-title {
 	font-size: 32px;
-	color: #fff;
+	background-color: rgba(255,255,255,.9);
 	text-align: center;
+	padding: 35px 35px 30px 35px;
+}
+a.aob {
+	color: #4198FF;
+}
+a.twc {
+	color: #666;
+}
+a.aob:hover, a.twc:hover {
+	opacity: .7;
 }
 /* LIGHTBOX */
 #lightbox {
