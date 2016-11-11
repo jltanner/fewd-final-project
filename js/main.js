@@ -3,6 +3,12 @@ var image_href_next;
 var image_href_prev;
 var lightbox;
 
+var excerpt = $("a.lightbox-trigger").map(function() {
+    return this.href;
+}).toArray();
+var page = 0;
+console.log(excerpt);
+
 // LIGHTBOX
 
 	$(".lightbox-trigger").on("click", function(e) {
@@ -11,63 +17,75 @@ var lightbox;
 		image_href_next = $(this).next().attr("href");
 		image_href_prev = $(this).prev().attr("href");
 
-		//create HTML for lightbox window
+		// //create HTML for lightbox window
 		lightbox = 
 		'<div id="lightbox">' +
-		'<i class="fa fa-times close"></i>' +
+			'<i class="fa fa-times close"></i>' +
 			'<div id="content">' + 
 				'<i class="fa fa-chevron-left prev"></i>' +
-				'<img src="' + image_href +'" />' +
+				'<img src="' + excerpt[0] +'" />' +
 				'<i class="fa fa-chevron-right next"></i>'
 			'</div>' +	
 		'</div>';
 
 		// insert and fade in
 		$(lightbox).hide().appendTo("body").fadeIn();
-		$(image_href).addClass(".in-view");
 
-		// click to close
-		$("body").on("click", "#lightbox", ".close", function() {
-			$(lightbox).fadeOut();
+	});
+
+	$("body").on("click", "i.close", function() {
+			$("body #lightbox").fadeOut();
 		});
 
-		$("#lightbox img").on("click", function(){
-		nextImg();
-		$("#content img").removeClass(".in-view");
-		});
+// next & prev image functions
+	function next() {
+		$("#content img").attr("src", excerpt[page+1]);
+		if (page == excerpt.length - 1) {
+            page = 0;
+            $("#content img").attr("src", excerpt[page]);
+		}
+        else {
+            page++;
+        }
+	};
 
+	function prev() {
+		$("#content img").attr("src", excerpt[page-1]);
+		if (page == 0) {
+            page = excerpt.length - 1;
+            $("#content img").attr("src", excerpt[page]);
+		}
+        else {
+            page--;
+        }
+	};
+
+// next & prev image click events
+	$("body").on("click", "#content img", function(){
+		next();
 	});
 
-
-	
-
-	// next & prev image functions
-	function nextImg() {
-		$("#content img").attr("src", image_href_next).addClass(".in-view");
-	}
-	function prevImg() {
-		$("#content img").attr("src", image_href_prev);
-	}
-
-	// next & prev click events
-	$("#lightbox img").on("click", function(){
-		nextImg();
-		$("lightbox img").addClass("in-view");
-	});
-	$("#lightbox img").on("swipeleft", function(){
-		nextImg();
-	});
-	$("#lightbox img").on("swiperight", function(){
-		prevImg();
+	$("body").on("click", "i.next", function(){
+		next();
 	});
 
-	$("#lightbox i.next").on("click", function(){
-		nextImg();
+	$("body").on("click", "i.prev", function(){
+		prev();
 	});
 
-	$("#lightbox i.prev").on("click", function(){
-		prevImg();
+	$(document).on("keydown", function(e) {
+		if (e.keyCode == 39) {  
+            next();
+        }
+        if(e.keyCode==37) {
+            prev();
+        }
 	});
+
+	$("body").on("swipeleft", "#content img", function() {
+		next();
+	});
+
 
 // HAMBURGER MENU
 $(".hamburger").on("click", function() {
