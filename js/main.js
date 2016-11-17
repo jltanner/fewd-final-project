@@ -9,12 +9,9 @@ var excerpt = $("a.lightbox-trigger").map(function() {
 }).toArray();
 var page = 0;
 
-// LIGHTBOX
+// LIGHTBOX (NO THUMBNAIL)
 $(".lightbox-trigger").on("click", function(e) {
 	e.preventDefault();
-	image_href = $(this).attr("href");
-	image_href_next = $(this).next().attr("href");
-	image_href_prev = $(this).prev().attr("href");
 
 	// create HTML for lightbox window
 	lightbox = 
@@ -23,6 +20,26 @@ $(".lightbox-trigger").on("click", function(e) {
 		'<div id="content">' + 
 			'<i class="fa fa-chevron-left prev"></i>' +
 			'<img src="' + excerpt[0] +'" />' +
+			'<i class="fa fa-chevron-right next"></i>'
+		'</div>' +	
+	'</div>';
+
+	// insert and fade in
+	$(lightbox).hide().appendTo("body").fadeIn();
+});
+
+// LIGHTBOX (WITH THUMBNAIL)
+$(".webthumb .lightbox-trigger").on("click", function(e) {
+	e.preventDefault();
+	image_href = $(this).attr("href");
+
+	// create HTML for lightbox window
+	lightbox = 
+	'<div id="lightbox">' +
+		'<i class="fa fa-times close"></i>' +
+		'<div id="content">' + 
+			'<i class="fa fa-chevron-left prev"></i>' +
+			'<img src="' + image_href +'" />' +
 			'<i class="fa fa-chevron-right next"></i>'
 		'</div>' +	
 	'</div>';
@@ -71,11 +88,17 @@ $(document).ready(function() {
 		$("body").on("click", "i.prev", function(){
 			prev();
 		});
-	} else if (winW <= 768) {
+	} else if (winW <= 1024) {
 		$("body").on("swipeleft", "#content img", function() {
 			next();
 		});
 		$("body").on("swiperight", "#content img", function() {
+			prev();
+		});
+		$("body").on("click", "i.next", function(){
+			next();
+		});
+		$("body").on("click", "i.prev", function(){
 			prev();
 		});
 		$("body").on("tap", function() {

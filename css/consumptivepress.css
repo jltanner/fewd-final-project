@@ -262,11 +262,6 @@ section {
 }
 @media only screen and (max-width: 568px) {
 	.consume h5 {
-		font-size: 75px;
-	}
-}
-@media only screen and (max-width: 375px) {
-	.consume h5 {
 		font-size: 50px;
 		padding: 25px;
 	}
@@ -430,9 +425,12 @@ h4.subtitle {
 }
 
 /* PUBLICATIONS Mobile */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 568px) {
 	.title {
 		margin-bottom: 10px;
+	}
+	.title h1 {
+		font-size: 32px;
 	}
 	.pub {
 		width: 100%;
@@ -484,19 +482,21 @@ a.tinyletter:hover	 {
 @media only screen and (max-width: 768px) {
 	.subscribe {
 		display: block;
+		height: auto;
 	}
 	form {
 		width: 80%;
-		margin: 40px auto;
+		height: 100%;
+		margin: 25% auto;
 	}
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 660px) {
 	.subscribe {
 		height: auto;
 	}
 	form {
 		padding: 40px 40px 25px 40px;
-		margin: 100px auto;
+		margin: 50px auto;
 	}
 	form h3 {
 		font-size: 20px;
@@ -592,45 +592,75 @@ a.tinyletter:hover	 {
 }
 
 /* WEBCOMICS */
-.webcomics-splash1 {
+.title img {
 	width: 100%;
-	height: 50vh;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-	background-image: url(../images/aob-bg.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: #4198FF;
+	padding-top: 15px;
 }
-.webcomics-splash2 {
+.webcomics {
 	width: 100%;
-	height: 50vh;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-	background-image: url(../images/twc.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: #F5F1E4;
+	overflow: hidden;
 }
-.webcomics-splash-title {
-	font-size: 32px;
-	background-color: rgba(255,255,255,.9);
+.webcomics h3 {
+	font-size: 24px;
+	padding: 10px 0 15px 0;
+}
+.webthumb {
+	float: left;
+	width: 33.3%;
+	height: auto;
+	overflow: hidden;
+}
+.webthumb h4 {
+	font-size: 16px;
+	padding: 10px 0 20px 0;
 	text-align: center;
-	padding: 35px 35px 30px 35px;
+	display: block;
 }
-a.aob {
-	color: #4198FF;
+.webthumb-inner-wrap {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
 }
-a.twc {
-	color: #666;
+.webthumb-left {
+	padding-right: 12px;
 }
-a.aob:hover, a.twc:hover {
+.webthumb-right {
+	padding-left: 12px;
+}
+.webthumb-ctr {
+	padding: 0 6px;
+}
+.webthumb img {
+	width: 100%;
+}
+.webthumb a:hover {
 	opacity: .7;
 }
+@media only screen and (min-width: 569px) and (max-width: 1024px) {
+	.webthumb {
+		width: 50%;
+	}
+	.webthumb-left, .webthumb-right, .webthumb-ctr {
+		padding: 0;
+	}
+	.webthumb:nth-child(even) {
+		padding-right: 10px;
+	}
+	.webthumb:nth-child(odd) {
+		padding-left: 10px;
+	}
+}
+
+@media only screen and (max-width: 568px) {
+	.webthumb {
+		float: none;
+		width: 100%;
+	}
+	.webthumb-left, .webthumb-right, .webthumb-ctr {
+		padding: 0;
+	}
+}
+
 /* LIGHTBOX */
 #lightbox {
     position: fixed;
