@@ -1,6 +1,10 @@
 @font-face {
 	font-family: 'League Spartan';
-    src: url('../fonts/leaguespartan-bold.ttf');
+    src: url('../fonts/leaguespartan-bold.ttf'),
+    	 url('../fonts/leaguespartan-bold.eot'),
+		 url('../fonts/leaguespartan-bold.svg'),
+		 url('../fonts/leaguespartan-bold.woff'),
+		 url('../fonts/leaguespartan-bold.woff2');
     font-weight: bold;
     font-style: normal;
 }
